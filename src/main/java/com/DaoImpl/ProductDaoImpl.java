@@ -33,6 +33,7 @@ public class ProductDaoImpl implements ProductDao{
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Product> retrieve(){
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();

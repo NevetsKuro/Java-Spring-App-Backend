@@ -10,5 +10,5 @@ public interface SupplierDao {
 	
 	public List<Supplier> retrieve();
 	
-	public Supplier findBySuppId(int sid);
+	public Supplier findBySupId(int sid);
 }

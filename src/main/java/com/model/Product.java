@@ -1,6 +1,8 @@
 package com.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,11 +26,11 @@ public class Product implements Serializable {
 	int id;
 	String name;
 	String rating;
-	String date;
 	String released;
 	String description;
 	Double Price;
 	String Quality; 
+	Date proddate;
 	int Stock;
 	int time;
 	
@@ -62,12 +64,6 @@ public class Product implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date2) {
-		this.date = date2;
 	}
 	public Category getCategory() {
 		return category;
@@ -127,6 +123,10 @@ public class Product implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+	public Date getProddate() {
+		return proddate;
+	}
+	public void setProddate(Date proddate) {
+		this.proddate = proddate;
+	}
 }
