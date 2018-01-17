@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import com.Dao.CategoryDao;
 import com.model.Category;
-import com.model.Product;
 
 @Repository("categoryDaoImpl")
 @Service
@@ -55,7 +54,7 @@ public class CategoryDaoImpl implements CategoryDao{
 		return c;
 	}
 	
-	public void update(Category c)
+	public void updateCat(Category c)
 	{
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();

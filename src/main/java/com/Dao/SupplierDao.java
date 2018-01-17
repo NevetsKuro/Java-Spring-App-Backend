@@ -11,4 +11,8 @@ public interface SupplierDao {
 	public List<Supplier> retrieve();
 	
 	public Supplier findBySupId(int sid);
+	
+	public void updateSup(Supplier s);
+	
+	public void deleteSup(int sid);
 }

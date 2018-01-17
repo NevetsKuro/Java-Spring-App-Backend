@@ -14,11 +14,15 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.DaoImpl.CartDaoImpl;
 import com.DaoImpl.CategoryDaoImpl;
+import com.DaoImpl.OrdersDaoImpl;
 import com.DaoImpl.ProductDaoImpl;
 import com.DaoImpl.SupplierDaoImpl;
 import com.DaoImpl.UserDaoImpl;
+import com.model.Cart;
 import com.model.Category;
+import com.model.Orders;
 import com.model.Product;
 import com.model.Supplier;
 import com.model.User;
@@ -47,7 +51,6 @@ public class HiberConfig {
 		p.put("hibernate.hbm2ddl.auto", "update");
 		p.put("hibernate.show_sql", "true");
 		System.out.println("Tables created");
-	
 		return p;
 	}
 	
@@ -60,8 +63,9 @@ public class HiberConfig {
 		lsfb.addAnnotatedClass(Supplier.class);
 		lsfb.addAnnotatedClass(Category.class);
 		lsfb.addAnnotatedClass(Product.class);
+		lsfb.addAnnotatedClass(Orders.class);
+		lsfb.addAnnotatedClass(Cart.class);
 		return lsfb.buildSessionFactory();
-		
 	}
 	
 	@Autowired
@@ -86,6 +90,17 @@ public class HiberConfig {
 	@Bean(name="productDaoImpl")
 	public ProductDaoImpl saveProductData(SessionFactory sf){
 		return new ProductDaoImpl(sf);
+	}
+	
+	@Autowired
+	@Bean(name="cartDaoImpl")
+	public CartDaoImpl saveCartData(SessionFactory sf){
+		return new CartDaoImpl(sf);
+	}
+	@Autowired
+	@Bean(name="ordersDaoImpl")
+	public OrdersDaoImpl saveOrdersData(SessionFactory sf){
+		return new OrdersDaoImpl(sf);
 	}
 	
 	@Autowired

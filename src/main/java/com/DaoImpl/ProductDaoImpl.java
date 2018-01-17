@@ -55,6 +55,19 @@ public class ProductDaoImpl implements ProductDao{
 		return p;
 	}
 	
+	public Product findByProdName(String pname){
+		Session session = sessionFactory.openSession();
+		Product p= null;
+		try {
+			session.beginTransaction();
+			p = (Product)session.get(Product.class,pname);
+			session.getTransaction().commit();
+		} catch (HibernateException e) {
+			e.getMessage();
+		}
+		return p;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Product> getProdByCatId(int cid){
 		Session session = sessionFactory.openSession();

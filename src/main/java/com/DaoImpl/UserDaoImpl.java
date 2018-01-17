@@ -1,5 +1,6 @@
 package com.DaoImpl;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,19 @@ public class UserDaoImpl implements UserDao {
 		session.getTransaction().commit();
 	}
 	
-//	public void validateUser(String name)
-//	{
-//	
-//	}
+	public User findUserByName(String implname){
+		Session session=sessionFactory.openSession();
+		User u = null;
+		try{
+		session.beginTransaction();
+		System.out.println(implname);
+		u = (User)session.get(User.class,implname);
+		session.getTransaction().commit();
+		}catch (HibernateException e) {
+			e.printStackTrace();
+			System.out.println("transaction unsuccessful UserDetails");
+		}
+		return u;
+	}
+	
 }

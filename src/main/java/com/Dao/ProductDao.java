@@ -11,6 +11,8 @@ public interface ProductDao {
 	public List<Product> retrieve();
 	
 	public Product findByProdId(int pid);
+	
+	public Product findByProdName(String pname);
 
 	public void update(Product p);
 	

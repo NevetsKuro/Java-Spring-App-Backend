@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class User implements Serializable{
 
 	/**
-	 * 
+	 * implement hibernate validiation
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
