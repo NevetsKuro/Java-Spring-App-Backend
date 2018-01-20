@@ -28,6 +28,16 @@ public class Orders implements Serializable{
 	private User user;
 	
 	private String payment;
+	private double total;
+
+	
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
 
 	public int getOrderId() {
 		return orderId;

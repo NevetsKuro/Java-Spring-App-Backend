@@ -4,21 +4,31 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.Valid;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.stereotype.Component;
 
+@SuppressWarnings("deprecation")
 @Entity
 @Component
 public class User implements Serializable{
-
 	/**
 	 * implement hibernate validiation
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@NotNull
 	String name;
+	@NotNull
+	@Email(message="Enter a valid Email")
 	String email;
+	@NotNull
 	String place;
+	@NotNull
+	@Length(min=6,message="Password should contain atleast 6 characters")
 	String password;
 	String gender;
 	String role;
