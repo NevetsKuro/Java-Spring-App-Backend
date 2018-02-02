@@ -45,6 +45,7 @@ public class SupplierDaoImpl implements SupplierDao {
 	public Supplier findBySupId(int sid){
 		Session session = sessionFactory.openSession();
 		Supplier s= null;
+		System.out.println(sid);
 		try {
 			session.beginTransaction();
 			s = (Supplier)session.get(Supplier.class,sid);
@@ -67,8 +68,7 @@ public class SupplierDaoImpl implements SupplierDao {
 	public void deleteSup(int sid)
 	{
 		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		
+		session.beginTransaction();		
 		Supplier s = (Supplier)session.get(Supplier.class,sid);
 		session.delete(s);
 		session.getTransaction().commit();

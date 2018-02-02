@@ -28,9 +28,18 @@ public class Orders implements Serializable{
 	private User user;
 	
 	private String payment;
+	private String paymentType;
+	
 	private double total;
 
-	
+	public String getPaymentType() {
+		return paymentType;
+	}
+
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+	}
+
 	public double getTotal() {
 		return total;
 	}

@@ -1,13 +1,16 @@
 package com.DaoImpl;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.Dao.CartDao;
 import com.model.Cart;
@@ -79,4 +82,14 @@ public class CartDaoImpl implements CartDao
 		session.getTransaction().commit();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public void deleteCartByName(String cartname){
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		List<Cart> cr = (List<Cart>)session.createQuery("from Cart where cartUserDetails=:cartName").setString("cartName",cartname).list();
+		for (Cart num : cr) { 		      
+			session.delete(num);
+		}
+		session.getTransaction().commit();
+	}
 }

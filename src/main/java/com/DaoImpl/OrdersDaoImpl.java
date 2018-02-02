@@ -16,12 +16,6 @@ import com.model.Orders;
 @Service
 public class OrdersDaoImpl implements OrdersDao
 {
-
-
-	//add annotatedClass of Orders and Cart
-	//and also sessionFactory parameterized bean method in hiberConfig 
-	//
-	
 	@Autowired
 	SessionFactory sessionFactory;
 	
@@ -29,6 +23,7 @@ public class OrdersDaoImpl implements OrdersDao
 	{
 		this.sessionFactory=sessionFactory;
 	}
+	
 	public void insertOrders(Orders orders){
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();

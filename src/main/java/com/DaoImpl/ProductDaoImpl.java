@@ -117,4 +117,37 @@ public class ProductDaoImpl implements ProductDao{
 		session.delete(p);
 		session.getTransaction().commit();
 	}
+	
+	//changes
+//	public int findStockByProdId(String cartname){
+//		Session session = sessionFactory.openSession();
+//		int stk = 0;
+//		try{
+//			session.beginTransaction();
+//			Query query = session.createQuery("select Stock from Product where name="+cartname);
+//			session.getTransaction().commit();
+//		}
+//		 catch (HibernateException e) {
+//				e.printStackTrace();
+//				session.getTransaction().rollback();
+//		}
+//		return (String)query.uniqueResult();
+//	
+//		
+//	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Product> findByProdNameFrSearch(String pname){
+		Session session = sessionFactory.openSession();
+		List<Product> p= null;
+		try {
+			session.beginTransaction();
+			p = session.createQuery("from Product where lower(name) LIKE '%" + pname + "%'").list();
+			session.getTransaction().commit();
+		} catch (HibernateException e) {
+			e.getMessage();
+			session.getTransaction().rollback();
+		}
+		return p;
+	}
 }

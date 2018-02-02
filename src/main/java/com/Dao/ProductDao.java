@@ -21,4 +21,8 @@ public interface ProductDao {
 	public List<Product> getProdByCatId(int cid);
 	
 	public List<Product> getProdBySupId(int sid);
+
+	//public int findStockByProdId(String cartname);
+	
+	public List<Product> findByProdNameFrSearch(String pname);
 }
