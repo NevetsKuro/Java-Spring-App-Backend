@@ -36,11 +36,11 @@ public class HiberConfig {
 	@Bean(name="datasource")
 	public DriverManagerDataSource getH2Data(){
 		System.out.println("initialized connection.");
-		DriverManagerDataSource dm=new DriverManagerDataSource();
+		DriverManagerDataSource dm = new DriverManagerDataSource();
 		dm.setDriverClassName("org.h2.Driver");
-		dm.setUrl("jdbc:h2:tcp://localhost/~/webby");
+		dm.setUrl("jdbc:h2:tcp://localhost/~/webby1");
 		dm.setUsername("sa");
-		dm.setPassword("");
+		dm.setPassword("Steven");
 		System.out.println("h2 connected");
 		return dm;
 	}
