@@ -3,10 +3,13 @@ package com.Dao;
 import java.util.List;
 
 import com.model.Product;
+import java.sql.Blob;
 
 public interface ProductDao {
 
 	public void insertProduct(Product product);
+        
+        public Blob insertImage(byte[] image);
 
 	public List<Product> retrieve();
 	
@@ -25,4 +28,6 @@ public interface ProductDao {
 	//public int findStockByProdId(String cartname);
 	
 	public List<Product> findByProdNameFrSearch(String pname);
+        
+	public List<Product> findByProdNameFrSearch(String pname,int CatType);
 }
