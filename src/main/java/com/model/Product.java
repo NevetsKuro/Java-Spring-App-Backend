@@ -62,7 +62,6 @@ public class Product implements Serializable {
     private Blob image;
     
     
-    
     public String getLikes() {
         return likes;
     }

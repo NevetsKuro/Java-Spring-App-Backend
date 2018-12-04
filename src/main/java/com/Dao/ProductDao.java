@@ -29,5 +29,9 @@ public interface ProductDao {
 	
 	public List<Product> findByProdNameFrSearch(String pname);
         
+	public List<Product> findByProdByTopChoice(String tc);
+
+        public List<Product> findByProdByCols(String coll);
+        
 	public List<Product> findByProdNameFrSearch(String pname,int CatType);
 }

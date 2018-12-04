@@ -161,13 +161,47 @@ public class ProductDaoImpl implements ProductDao {
         List<Product> p = null;
         try {
             session.beginTransaction();
-            p = session.createQuery("from Product where lower(name) LIKE '%" + pname + "%' AND cid LIKE '%" + CatType + "%'").list();
+            if(CatType==0){
+                p = session.createQuery("from Product where lower(name) LIKE '%" + pname + "%'").list();
+            }else{
+                p = session.createQuery("from Product where lower(name) LIKE '%" + pname + "%' AND cid LIKE '%" + CatType + "%'").list();
+            }
             session.getTransaction().commit();
         } catch (HibernateException e) {
             e.getMessage();
             session.getTransaction().rollback();
         }
         return p;
+    }
+
+    @Override
+    public List<Product> findByProdByTopChoice(String tc) {
+        Session session = sessionFactory.openSession();
+        List<Product> prod = null;
+        try {
+            session.beginTransaction();
+            prod = session.createQuery("from Product where TOP_LISTS ='" + tc + "'").list();
+            session.getTransaction().commit();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        return prod;
+    }
+
+    @Override
+    public List<Product> findByProdByCols(String coll) {
+        Session session = sessionFactory.openSession();
+        List<Product> prod = null;
+        try {
+            session.beginTransaction();
+            prod = session.createQuery("from Product where COLL_TYPE ='" + coll +"'").list();
+            session.getTransaction().commit();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        return prod;
     }
 
 }
