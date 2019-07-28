@@ -97,21 +97,21 @@
 <dependency>
     <groupId>org.springframework.security</groupId>
     <artifactId>spring-security-core</artifactId>
-    <version>4.2.4.RELEASE</version>
+    <version>4.2.12.RELEASE</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
 <dependency>
     <groupId>org.springframework.security</groupId>
     <artifactId>spring-security-web</artifactId>
-    <version>4.2.4.RELEASE</version>
+    <version>4.2.12.RELEASE</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
 <dependency>
     <groupId>org.springframework.security</groupId>
     <artifactId>spring-security-config</artifactId>
-    <version>4.2.4.RELEASE</version>
+    <version>4.2.12.RELEASE</version>
 </dependency>
 
     
