@@ -36,21 +36,21 @@
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-core</artifactId>
-	    <version>4.3.11.Final</version>
+	    <version>5.3.18.Final</version>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-entitymanager</artifactId>
-	    <version>4.3.11.Final</version>
+	    <version>5.3.18.Final</version>
 	</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 	<dependency>
 	    <groupId>org.hibernate.validator</groupId>
 	    <artifactId>hibernate-validator</artifactId>
-	    <version>6.0.7.Final</version>
+	    <version>6.0.19.Final</version>
 	</dependency>
 
 	 
@@ -97,21 +97,21 @@
 <dependency>
     <groupId>org.springframework.security</groupId>
     <artifactId>spring-security-core</artifactId>
-    <version>4.2.4.RELEASE</version>
+    <version>4.2.16.RELEASE</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
 <dependency>
     <groupId>org.springframework.security</groupId>
     <artifactId>spring-security-web</artifactId>
-    <version>4.2.4.RELEASE</version>
+    <version>4.2.16.RELEASE</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
 <dependency>
     <groupId>org.springframework.security</groupId>
     <artifactId>spring-security-config</artifactId>
-    <version>4.2.4.RELEASE</version>
+    <version>4.2.16.RELEASE</version>
 </dependency>
 
     
