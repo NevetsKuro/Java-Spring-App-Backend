@@ -43,14 +43,14 @@
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-entitymanager</artifactId>
-	    <version>4.3.11.Final</version>
+	    <version>5.4.24.Final</version>
 	</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 	<dependency>
 	    <groupId>org.hibernate.validator</groupId>
 	    <artifactId>hibernate-validator</artifactId>
-	    <version>6.0.7.Final</version>
+	    <version>6.0.19.Final</version>
 	</dependency>
 
 	 
@@ -134,7 +134,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-beans</artifactId>
-    <version>4.3.12.RELEASE</version>
+    <version>4.3.14.RELEASE</version>
 </dependency>
 
 <!-- jstl -->
@@ -148,7 +148,7 @@
 <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-orm</artifactId>
-        <version>4.3.12.RELEASE</version>
+        <version>4.3.14.RELEASE</version>
 </dependency>
 
         <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
